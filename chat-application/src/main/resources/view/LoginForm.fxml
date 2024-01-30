@@ -9,7 +9,7 @@
 <?import javafx.scene.text.Font?>
 
 
-<AnchorPane prefHeight="461.0" prefWidth="537.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.Controller.LoginFormController">
+<AnchorPane prefHeight="461.0" prefWidth="537.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.LoginFormController">
    <children>
       <TextField fx:id="txtName" layoutX="200.0" layoutY="259.0" prefHeight="34.0" prefWidth="237.0" promptText="User Name" style="-fx-background-radius: 20;" />
       <Label layoutX="99.0" layoutY="265.0" text="User Name :">

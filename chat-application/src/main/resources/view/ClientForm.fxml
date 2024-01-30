@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="475.0" prefWidth="537.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.Controller.ClientFormController">
+<AnchorPane prefHeight="475.0" prefWidth="537.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.ClientFormController">
    <children>
       <TextField fx:id="txtMsg" layoutX="65.0" layoutY="386.0" prefHeight="48.0" prefWidth="336.0" />
       <JFXButton buttonType="RAISED" layoutX="424.0" layoutY="391.0" onAction="#btnSendOnAction" prefHeight="34.0" prefWidth="86.0" style="-fx-background-radius: 10; -fx-background-color: #89CFF3;" text="Send">
