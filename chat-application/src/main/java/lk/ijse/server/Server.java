@@ -25,7 +25,14 @@ public class Server implements Runnable{
         for (LocalSocket localSocket : localSockets){
             if (localSocket != null){
                 localSocket.sendMsg(msg);
-                System.out.println(msg);
+            }
+        }
+    }
+
+    private void broadcastImage(String name, byte[] bytes) {
+        for (LocalSocket localSocket : localSockets){
+            if (localSocket != null){
+                localSocket.sendImage(name, bytes);
             }
         }
     }
@@ -44,14 +51,14 @@ public class Server implements Runnable{
                 pool.execute(localSocket);
             }
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            e.printStackTrace();
         }
     }
-
     public class LocalSocket implements Runnable{
 
         private Socket socket;
         private DataInputStream dataInputStream;
+
         private DataOutputStream dataOutputStream;
 
         @Override
@@ -63,20 +70,45 @@ public class Server implements Runnable{
                 String msg;
 
                 while ((msg=dataInputStream.readUTF())!=null){
-                    broadcast(msg);
-                    System.out.println(msg);
+                    if (msg.equals("/01")){
+                        msg = dataInputStream.readUTF();
+                        broadcast(msg);
+                    }else if (msg.equals("/02")){
+                        String name = dataInputStream.readUTF();
+                        byte[] bytes = new byte[dataInputStream.readInt()];
+                        dataInputStream.readFully(bytes);
+                        broadcastImage(name, bytes);
+                    }
+
                 }
             } catch (IOException e) {
-                throw new RuntimeException(e);
+                e.printStackTrace();
+            }
+        }
+
+        private void sendImage(String name, byte[] bytes){
+            try {
+                dataOutputStream.writeUTF("/02");
+                dataOutputStream.flush();
+                dataOutputStream.writeUTF(name);
+                dataOutputStream.flush();
+                dataOutputStream.writeInt(bytes.length);
+                dataOutputStream.flush();
+                dataOutputStream.write(bytes);
+                dataOutputStream.flush();
+            } catch (IOException e) {
+                e.printStackTrace();
             }
         }
 
         private void sendMsg(String msg){
             try {
+                dataOutputStream.writeUTF("/01");
+                dataOutputStream.flush();
                 dataOutputStream.writeUTF(msg);
                 dataOutputStream.flush();
             } catch (IOException e) {
-                throw new RuntimeException(e);
+                e.printStackTrace();
             }
         }
 
