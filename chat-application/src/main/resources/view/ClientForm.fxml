@@ -24,76 +24,107 @@
             <Font name="System Bold" size="27.0" />
          </font>
       </Label>
-      <ScrollPane fx:id="scrollPane" layoutX="20.0" layoutY="61.0" prefHeight="386.0" prefWidth="523.0">
+      <ScrollPane fx:id="scrollPane" layoutX="20.0" layoutY="61.0" prefHeight="390.0" prefWidth="530.0">
          <content>
             <VBox fx:id="vBox" prefHeight="384.0" prefWidth="521.0" />
          </content>
       </ScrollPane>
-      <JFXButton buttonType="RAISED" layoutX="377.0" layoutY="463.0" onAction="#btnEmojiOnAction" prefHeight="25.0" prefWidth="49.0" text="Emoji" />
-      <JFXButton layoutX="377.0" layoutY="499.0" onAction="#btnImageOnAction" text="Image" />
-      <AnchorPane fx:id="emojiPane" layoutX="381.0" layoutY="287.0" prefHeight="155.0" prefWidth="155.0" visible="false">
+      <ImageView fitHeight="35.0" fitWidth="35.0" layoutX="370.0" layoutY="482.0" onMouseClicked="#btnEmojiOnAction" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/emoji.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="35.0" fitWidth="35.0" layoutX="411.0" layoutY="482.0" onMouseClicked="#btnImageOnAction" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/picture.png" />
+         </image>
+      </ImageView>
+      <AnchorPane fx:id="emojiPane" layoutX="381.0" layoutY="320.0" prefHeight="126.0" prefWidth="165.0" visible="false">
          <children>
-            <VBox prefHeight="150.0" prefWidth="150.0">
-               <children>
-                  <HBox alignment="CENTER" prefHeight="50.0" prefWidth="150.0">
+            <ScrollPane prefHeight="125.0" prefWidth="165.0">
+               <content>
+                  <VBox prefHeight="150.0" prefWidth="150.0">
                      <children>
-                        <ImageView fitHeight="50.0" fitWidth="50.0" onMouseClicked="#btnEmoji1Clicked" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../img/1.png" />
-                           </image>
-                        </ImageView>
-                        <ImageView fitHeight="50.0" fitWidth="50.0" onMouseClicked="#btnEmoji2Clicked" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../img/2.png" />
-                           </image>
-                        </ImageView>
-                        <ImageView fitHeight="50.0" fitWidth="50.0" onMouseClicked="#btnEmoji3Clicked" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../img/3.png" />
-                           </image>
-                        </ImageView>
+                        <HBox alignment="CENTER" prefHeight="50.0" prefWidth="150.0" spacing="8.0">
+                           <children>
+                              <ImageView fitHeight="40.0" fitWidth="40.0" onMouseClicked="#btnEmoji1Clicked" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../img/1.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="40.0" fitWidth="40.0" onMouseClicked="#btnEmoji2Clicked" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../img/2.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="40.0" fitWidth="40.0" onMouseClicked="#btnEmoji3Clicked" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../img/3.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="50.0" prefWidth="150.0" spacing="8.0">
+                           <children>
+                              <ImageView fitHeight="40.0" fitWidth="40.0" onMouseClicked="#btnEmoji4Clicked" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../img/4.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="40.0" fitWidth="40.0" onMouseClicked="#btnEmoji5Clicked" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../img/5.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="40.0" fitWidth="40.0" onMouseClicked="#btnEmoji6Clicked" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../img/6.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="50.0" prefWidth="150.0" spacing="8.0">
+                           <children>
+                              <ImageView fitHeight="40.0" fitWidth="40.0" onMouseClicked="#btnEmoji7Clicked" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../img/7.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="40.0" fitWidth="40.0" onMouseClicked="#btnEmoji8Clicked" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../img/8.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="40.0" fitWidth="40.0" onMouseClicked="#btnEmoji9Clicked" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../img/9.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="50.0" prefWidth="150.0" spacing="8.0">
+                           <children>
+                              <ImageView fitHeight="40.0" fitWidth="40.0" onMouseClicked="#btnEmoji10Clicked" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../img/10.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="40.0" fitWidth="40.0" onMouseClicked="#btnEmoji11Clicked" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../img/11.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="40.0" fitWidth="40.0" onMouseClicked="#btnEmoji12Clicked" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../img/12.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </HBox>
                      </children>
-                  </HBox>
-                  <HBox prefHeight="50.0" prefWidth="150.0">
-                     <children>
-                        <ImageView fitHeight="50.0" fitWidth="50.0" onMouseClicked="#btnEmoji4Clicked" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../img/4.png" />
-                           </image>
-                        </ImageView>
-                        <ImageView fitHeight="50.0" fitWidth="50.0" onMouseClicked="#btnEmoji5Clicked" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../img/5.png" />
-                           </image>
-                        </ImageView>
-                        <ImageView fitHeight="50.0" fitWidth="50.0" onMouseClicked="#btnEmoji6Clicked" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../img/6.png" />
-                           </image>
-                        </ImageView>
-                     </children>
-                  </HBox>
-                  <HBox prefHeight="50.0" prefWidth="150.0">
-                     <children>
-                        <ImageView fitHeight="50.0" fitWidth="50.0" onMouseClicked="#btnEmoji7Clicked" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../img/7.png" />
-                           </image>
-                        </ImageView>
-                        <ImageView fitHeight="50.0" fitWidth="50.0" onMouseClicked="#btnEmoji8Clicked" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../img/8.png" />
-                           </image>
-                        </ImageView>
-                        <ImageView fitHeight="50.0" fitWidth="50.0" onMouseClicked="#btnEmoji9Clicked" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../img/9.png" />
-                           </image>
-                        </ImageView>
-                     </children>
-                  </HBox>
-               </children>
-            </VBox>
+                  </VBox>
+               </content>
+            </ScrollPane>
          </children>
       </AnchorPane>
    </children>

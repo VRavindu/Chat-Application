@@ -54,7 +54,7 @@ public class ClientFormController implements Runnable, Initializable {
                 dataOutputStream.flush();
                 dataOutputStream.writeUTF(clientName + " : " + msg);
                 dataOutputStream.flush();
-                System.out.println(msg);
+                txtMsg.clear();
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -138,15 +138,8 @@ public class ClientFormController implements Runnable, Initializable {
         }).start();
     }
 
-    public void btnEmojiOnAction(ActionEvent actionEvent) {
-        if (!emojiPane.isVisible()) {
-            emojiPane.setVisible(true);
-        }else {
-            emojiPane.setVisible(false);
-        }
-    }
 
-    public void btnImageOnAction(ActionEvent actionEvent) {
+    public void btnImageOnAction(MouseEvent mouseEvent) {
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Select an Image");
         fileChooser.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("Image Files", "*.png", "*.jpg"));
@@ -176,33 +169,48 @@ public class ClientFormController implements Runnable, Initializable {
         }
     }
 
-
+    public void btnEmojiOnAction(MouseEvent mouseEvent) {
+        if (!emojiPane.isVisible()) {
+            emojiPane.setVisible(true);
+        }else {
+            emojiPane.setVisible(false);
+        }
+    }
 
     public void btnEmoji1Clicked(MouseEvent mouseEvent) {
-        txtMsg.appendText("\u263A");
+        txtMsg.appendText("\uD83D\uDE42");
     }
-
     public void btnEmoji2Clicked(MouseEvent mouseEvent) {
+        txtMsg.appendText("\uD83D\uDE02");
     }
-
     public void btnEmoji3Clicked(MouseEvent mouseEvent) {
+        txtMsg.appendText("\uD83E\uDD70");
     }
-
     public void btnEmoji4Clicked(MouseEvent mouseEvent) {
+        txtMsg.appendText("\uD83D\uDE0D");
     }
-
     public void btnEmoji5Clicked(MouseEvent mouseEvent) {
+        txtMsg.appendText("\uD83D\uDE18");
     }
-
     public void btnEmoji6Clicked(MouseEvent mouseEvent) {
+        txtMsg.appendText("\uD83D\uDE2E");
     }
-
     public void btnEmoji7Clicked(MouseEvent mouseEvent) {
+        txtMsg.appendText("\uD83D\uDE12");
     }
-
     public void btnEmoji8Clicked(MouseEvent mouseEvent) {
+        txtMsg.appendText("\uD83D\uDE44");
     }
-
     public void btnEmoji9Clicked(MouseEvent mouseEvent) {
+        txtMsg.appendText("\u2764");
+    }
+    public void btnEmoji10Clicked(MouseEvent mouseEvent) {
+        txtMsg.appendText("\uD83D\uDE20");
+    }
+    public void btnEmoji11Clicked(MouseEvent mouseEvent) {
+        txtMsg.appendText("\uD83D\uDE2D");
+    }
+    public void btnEmoji12Clicked(MouseEvent mouseEvent) {
+        txtMsg.appendText("\uD83D\uDE34");
     }
 }
