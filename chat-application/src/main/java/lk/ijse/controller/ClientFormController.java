@@ -73,16 +73,19 @@ public class ClientFormController implements Runnable, Initializable {
             while ((msg=dataInputStream.readUTF())!=null){
                 if (msg.equals("/01")){
                     msg = dataInputStream.readUTF();
+                    String[] split = msg.split(" : ");
                     HBox hBox = new HBox();
-                    Label label = new Label(msg);
+                    Label label = new Label();
                     label.setFont(Font.font(20));
-                    hBox.getChildren().add(label);
 
                     if (msg.startsWith(clientName)){
+                        label.setText(split[1]);
                         hBox.setAlignment(Pos.CENTER_RIGHT);
                     }else {
+                        label.setText(msg);
                         hBox.setAlignment(Pos.CENTER_LEFT);
                     }
+                    hBox.getChildren().add(label);
 
                     Platform.runLater(()->{
                         vBox.getChildren().add(hBox);
