@@ -4,13 +4,16 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="547.0" prefWidth="564.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.ClientFormController">
    <children>
-      <TextField fx:id="txtMsg" layoutX="20.0" layoutY="475.0" prefHeight="48.0" prefWidth="336.0" />
+      <TextField fx:id="txtMsg" layoutX="20.0" layoutY="475.0" prefHeight="49.0" prefWidth="336.0" />
       <JFXButton buttonType="RAISED" layoutX="457.0" layoutY="480.0" onAction="#btnSendOnAction" prefHeight="34.0" prefWidth="86.0" style="-fx-background-radius: 25; -fx-background-color: #89CFF3;" text="Send">
          <font>
             <Font name="System Bold" size="18.0" />
@@ -28,5 +31,70 @@
       </ScrollPane>
       <JFXButton buttonType="RAISED" layoutX="377.0" layoutY="463.0" onAction="#btnEmojiOnAction" prefHeight="25.0" prefWidth="49.0" text="Emoji" />
       <JFXButton layoutX="377.0" layoutY="499.0" onAction="#btnImageOnAction" text="Image" />
+      <AnchorPane fx:id="emojiPane" layoutX="381.0" layoutY="287.0" prefHeight="155.0" prefWidth="155.0" visible="false">
+         <children>
+            <VBox prefHeight="150.0" prefWidth="150.0">
+               <children>
+                  <HBox alignment="CENTER" prefHeight="50.0" prefWidth="150.0">
+                     <children>
+                        <ImageView fitHeight="50.0" fitWidth="50.0" onMouseClicked="#btnEmoji1Clicked" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../img/1.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="50.0" fitWidth="50.0" onMouseClicked="#btnEmoji2Clicked" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../img/2.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="50.0" fitWidth="50.0" onMouseClicked="#btnEmoji3Clicked" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../img/3.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="50.0" prefWidth="150.0">
+                     <children>
+                        <ImageView fitHeight="50.0" fitWidth="50.0" onMouseClicked="#btnEmoji4Clicked" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../img/4.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="50.0" fitWidth="50.0" onMouseClicked="#btnEmoji5Clicked" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../img/5.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="50.0" fitWidth="50.0" onMouseClicked="#btnEmoji6Clicked" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../img/6.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="50.0" prefWidth="150.0">
+                     <children>
+                        <ImageView fitHeight="50.0" fitWidth="50.0" onMouseClicked="#btnEmoji7Clicked" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../img/7.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="50.0" fitWidth="50.0" onMouseClicked="#btnEmoji8Clicked" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../img/8.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="50.0" fitWidth="50.0" onMouseClicked="#btnEmoji9Clicked" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../img/9.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+      </AnchorPane>
    </children>
 </AnchorPane>

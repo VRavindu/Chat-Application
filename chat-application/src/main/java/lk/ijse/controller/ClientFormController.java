@@ -11,6 +11,8 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
@@ -26,6 +28,9 @@ public class ClientFormController implements Runnable, Initializable {
 
     @FXML
     private TextField txtMsg;
+
+    @FXML
+    private AnchorPane emojiPane;
 
     @FXML
     private Label lblClientName;
@@ -134,6 +139,11 @@ public class ClientFormController implements Runnable, Initializable {
     }
 
     public void btnEmojiOnAction(ActionEvent actionEvent) {
+        if (!emojiPane.isVisible()) {
+            emojiPane.setVisible(true);
+        }else {
+            emojiPane.setVisible(false);
+        }
     }
 
     public void btnImageOnAction(ActionEvent actionEvent) {
@@ -164,5 +174,35 @@ public class ClientFormController implements Runnable, Initializable {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+
+
+    public void btnEmoji1Clicked(MouseEvent mouseEvent) {
+        txtMsg.appendText("\u263A");
+    }
+
+    public void btnEmoji2Clicked(MouseEvent mouseEvent) {
+    }
+
+    public void btnEmoji3Clicked(MouseEvent mouseEvent) {
+    }
+
+    public void btnEmoji4Clicked(MouseEvent mouseEvent) {
+    }
+
+    public void btnEmoji5Clicked(MouseEvent mouseEvent) {
+    }
+
+    public void btnEmoji6Clicked(MouseEvent mouseEvent) {
+    }
+
+    public void btnEmoji7Clicked(MouseEvent mouseEvent) {
+    }
+
+    public void btnEmoji8Clicked(MouseEvent mouseEvent) {
+    }
+
+    public void btnEmoji9Clicked(MouseEvent mouseEvent) {
     }
 }
