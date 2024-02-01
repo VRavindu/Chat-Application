@@ -70,10 +70,10 @@ public class Server implements Runnable{
                 String msg;
 
                 while ((msg=dataInputStream.readUTF())!=null){
-                    if (msg.equals("/01")){
+                    if (msg.equals("/text")){
                         msg = dataInputStream.readUTF();
                         broadcast(msg);
-                    }else if (msg.equals("/02")){
+                    }else if (msg.equals("/image")){
                         String name = dataInputStream.readUTF();
                         byte[] bytes = new byte[dataInputStream.readInt()];
                         dataInputStream.readFully(bytes);
@@ -88,7 +88,7 @@ public class Server implements Runnable{
 
         private void sendImage(String name, byte[] bytes){
             try {
-                dataOutputStream.writeUTF("/02");
+                dataOutputStream.writeUTF("/image");
                 dataOutputStream.flush();
                 dataOutputStream.writeUTF(name);
                 dataOutputStream.flush();
@@ -103,7 +103,7 @@ public class Server implements Runnable{
 
         private void sendMsg(String msg){
             try {
-                dataOutputStream.writeUTF("/01");
+                dataOutputStream.writeUTF("/text");
                 dataOutputStream.flush();
                 dataOutputStream.writeUTF(msg);
                 dataOutputStream.flush();

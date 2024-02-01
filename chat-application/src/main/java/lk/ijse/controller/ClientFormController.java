@@ -50,7 +50,7 @@ public class ClientFormController implements Runnable, Initializable {
         String msg = txtMsg.getText();
         if (msg!=null){
             try {
-                dataOutputStream.writeUTF("/01");
+                dataOutputStream.writeUTF("/text");
                 dataOutputStream.flush();
                 dataOutputStream.writeUTF(clientName + " : " + msg);
                 dataOutputStream.flush();
@@ -76,7 +76,7 @@ public class ClientFormController implements Runnable, Initializable {
             String msg;
 
             while ((msg=dataInputStream.readUTF())!=null){
-                if (msg.equals("/01")){
+                if (msg.equals("/text")){
                     msg = dataInputStream.readUTF();
                     String[] split = msg.split(" : ");
                     HBox hBox = new HBox();
@@ -95,7 +95,7 @@ public class ClientFormController implements Runnable, Initializable {
                     Platform.runLater(()->{
                         vBox.getChildren().add(hBox);
                     });
-                } else if (msg.equals("/02")) {
+                } else if (msg.equals("/image")) {
                     String name = dataInputStream.readUTF();
                     byte[] bytes = new byte[dataInputStream.readInt()];
                     dataInputStream.readFully(bytes);
@@ -156,7 +156,7 @@ public class ClientFormController implements Runnable, Initializable {
 
     private void sendImage(String name, byte[] bytes) {
         try {
-            dataOutputStream.writeUTF("/02");
+            dataOutputStream.writeUTF("/image");
             dataOutputStream.flush();
             dataOutputStream.writeUTF(name);
             dataOutputStream.flush();
