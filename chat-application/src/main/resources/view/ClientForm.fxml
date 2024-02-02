@@ -45,7 +45,7 @@
       </ImageView>
       <ScrollPane fx:id="scrollPane" layoutX="40.0" layoutY="112.0" prefHeight="572.0" prefWidth="516.0">
          <content>
-            <VBox fx:id="vBox" prefHeight="570.0" prefWidth="514.0" style="-fx-background-color: #B8EBF6;" />
+            <VBox fx:id="vBox" prefHeight="570.0" prefWidth="512.0" style="-fx-background-color: #B8EBF6;" />
          </content>
       </ScrollPane>
       <TextField fx:id="txtMsg" layoutX="25.0" layoutY="724.0" onAction="#txtMsgOnAction" prefHeight="49.0" prefWidth="357.0" style="-fx-background-radius: 20;" />

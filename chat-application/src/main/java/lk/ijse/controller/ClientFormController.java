@@ -4,10 +4,10 @@ import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
-import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -82,15 +82,34 @@ public class ClientFormController implements Runnable, Initializable {
                     String[] split = msg.split(" : ");
                     HBox hBox = new HBox();
                     Label label = new Label();
+                    Label name = new Label();
                     label.setFont(Font.font(20));
+                    label.setStyle("-fx-font-weight: bold;" +
+                            "-fx-text-fill: #ffffff;" +
+                            "-fx-background-color: #525050;" +
+                            "-fx-padding: 10px;" +
+                            "-fx-alignment: center;" +
+                            "-fx-background-radius: 25;");
+                    hBox.setPadding(new Insets(5, 5, 5, 10));
+                    name.setFont(Font.font(15));
+                    name.setStyle("-fx-font-weight: bold;" +
+                            "-fx-text-fill: black;");
 
                     if (msg.startsWith(clientName)){
                         label.setText(split[1]);
                         hBox.setAlignment(Pos.CENTER_RIGHT);
                     }else {
-                        label.setText(msg);
+                        label.setStyle("-fx-font-weight: bold;" +
+                                "-fx-text-fill: #525050;" +
+                                "-fx-background-color: #ffffff;" +
+                                "-fx-padding: 10px;" +
+                                "-fx-alignment: center;" +
+                                "-fx-background-radius: 25;");
+                        name.setText(split[0] + " : ");
+                        label.setText(split[1]);
                         hBox.setAlignment(Pos.CENTER_LEFT);
                     }
+                    hBox.getChildren().add(name);
                     hBox.getChildren().add(label);
 
                     Platform.runLater(()->{
@@ -103,7 +122,8 @@ public class ClientFormController implements Runnable, Initializable {
 
                     HBox hBox = new HBox();
                     Label label = new Label(name + " : ");
-                    label.setFont(Font.font(20));
+                    label.setStyle("-fx-font-size: 15;" +
+                            "-fx-font-weight: bold;");
                     ByteArrayInputStream imageArray = new ByteArrayInputStream(bytes);
                     Image image = new Image(imageArray);
                     ImageView imageView = new ImageView(image);
