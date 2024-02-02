@@ -11,47 +11,62 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="556.0" prefWidth="597.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.ClientFormController">
+<AnchorPane prefHeight="800.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.ClientFormController">
    <children>
-      <ImageView fitHeight="702.0" fitWidth="744.0" layoutX="-108.0" layoutY="-226.0" opacity="0.16" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="182.0" fitWidth="600.0" layoutY="-52.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../img/111.png" />
+            <Image url="@../img/upRec.png" />
          </image>
       </ImageView>
-      <TextField fx:id="txtMsg" layoutX="20.0" layoutY="475.0" prefHeight="49.0" prefWidth="370.0" />
-      <JFXButton buttonType="RAISED" layoutX="491.0" layoutY="480.0" onAction="#btnSendOnAction" prefHeight="34.0" prefWidth="86.0" style="-fx-background-radius: 25; -fx-background-color: #89CFF3;" text="Send">
-         <font>
-            <Font name="System Bold" size="18.0" />
-         </font>
-      </JFXButton>
-      <Label fx:id="lblClientName" layoutX="250.0" layoutY="14.0">
+      <ImageView fitHeight="182.0" fitWidth="600.0" layoutY="697.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/downRec.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="40.0" fitWidth="200.0" layoutX="388.0" layoutY="729.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/pane.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="55.0" fitWidth="50.0" layoutX="348.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/pic.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="lblClientName" layoutX="408.0" layoutY="30.0">
          <font>
             <Font name="System Bold" size="27.0" />
          </font>
       </Label>
-      <ScrollPane fx:id="scrollPane" layoutX="20.0" layoutY="61.0" prefHeight="390.0" prefWidth="557.0">
-         <content>
-            <VBox fx:id="vBox" prefHeight="384.0" prefWidth="550.0" />
-         </content>
-      </ScrollPane>
-      <ImageView fitHeight="546.0" fitWidth="569.0" layoutX="25.0" layoutY="-19.0" nodeOrientation="INHERIT" opacity="0.07" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="546.0" fitWidth="569.0" layoutX="25.0" layoutY="65.0" nodeOrientation="INHERIT" opacity="0.09" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../img/111.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="35.0" fitWidth="35.0" layoutX="404.0" layoutY="482.0" onMouseClicked="#btnEmojiOnAction" pickOnBounds="true" preserveRatio="true">
+      <ScrollPane fx:id="scrollPane" layoutX="40.0" layoutY="112.0" prefHeight="572.0" prefWidth="516.0">
+         <content>
+            <VBox fx:id="vBox" prefHeight="570.0" prefWidth="514.0" style="-fx-background-color: #B8EBF6;" />
+         </content>
+      </ScrollPane>
+      <TextField fx:id="txtMsg" layoutX="25.0" layoutY="724.0" onAction="#txtMsgOnAction" prefHeight="49.0" prefWidth="357.0" style="-fx-background-radius: 20;" />
+      <JFXButton buttonType="RAISED" layoutX="491.0" layoutY="729.0" onAction="#btnSendOnAction" prefHeight="34.0" prefWidth="86.0" style="-fx-background-radius: 25; -fx-background-color: #89CFF3;" text="Send">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </JFXButton>
+      <ImageView fitHeight="35.0" fitWidth="35.0" layoutX="395.0" layoutY="731.0" onMouseClicked="#btnEmojiOnAction" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../img/emoji.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="35.0" fitWidth="35.0" layoutX="446.0" layoutY="482.0" onMouseClicked="#btnImageOnAction" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="35.0" fitWidth="35.0" layoutX="437.0" layoutY="731.0" onMouseClicked="#btnImageOnAction" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../img/picture.png" />
          </image>
       </ImageView>
-      <AnchorPane fx:id="emojiPane" layoutX="388.0" layoutY="318.0" prefHeight="126.0" prefWidth="165.0" visible="false">
+      <AnchorPane fx:id="emojiPane" layoutX="388.0" layoutY="317.0" prefHeight="126.0" prefWidth="165.0" visible="false">
          <children>
-            <ScrollPane prefHeight="125.0" prefWidth="165.0">
+            <ScrollPane layoutX="-31.0" layoutY="268.0" prefHeight="125.0" prefWidth="165.0">
                <content>
                   <VBox prefHeight="150.0" prefWidth="150.0">
                      <children>

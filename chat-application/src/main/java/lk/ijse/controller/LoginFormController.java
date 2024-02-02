@@ -33,4 +33,8 @@ public class LoginFormController {
             new Alert(Alert.AlertType.ERROR, "Please Enter Your Name! ").show();
         }
     }
+
+    public void txtNameOnAction(ActionEvent actionEvent) throws IOException {
+        btnLoginOnAction(actionEvent);
+    }
 }

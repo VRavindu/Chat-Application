@@ -55,6 +55,7 @@ public class ClientFormController implements Runnable, Initializable {
                 dataOutputStream.writeUTF(clientName + " : " + msg);
                 dataOutputStream.flush();
                 txtMsg.clear();
+                emojiPane.setVisible(false);
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -68,8 +69,8 @@ public class ClientFormController implements Runnable, Initializable {
     @Override
     public void run() {
         try {
-            socket = new Socket("192.168.8.114", 5000);
-            //socket = new Socket("localhost", 4000);
+            //socket = new Socket("192.168.8.106", 5000);
+            socket = new Socket("localhost", 5000);
             dataInputStream = new DataInputStream(new BufferedInputStream(socket.getInputStream()));
             dataOutputStream = new DataOutputStream(socket.getOutputStream());
 
@@ -175,6 +176,9 @@ public class ClientFormController implements Runnable, Initializable {
         }else {
             emojiPane.setVisible(false);
         }
+    }
+    public void txtMsgOnAction(ActionEvent actionEvent) {
+        btnSendOnAction(actionEvent);
     }
 
     public void btnEmoji1Clicked(MouseEvent mouseEvent) {

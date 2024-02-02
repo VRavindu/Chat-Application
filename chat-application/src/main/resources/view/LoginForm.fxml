@@ -9,35 +9,30 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="589.0" prefWidth="537.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.LoginFormController">
+<AnchorPane prefHeight="850.0" prefWidth="550.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.LoginFormController">
    <children>
-      <ImageView fitHeight="542.0" fitWidth="544.0" layoutX="-1.0" layoutY="13.0" opacity="0.08" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="850.0" fitWidth="599.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../img/chat-login.png" />
+            <Image url="@../img/bg.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="580.0" fitWidth="607.0" layoutX="-109.0" layoutY="-229.0" opacity="0.35" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../img/wave.png" />
-         </image>
-      </ImageView>
-      <TextField fx:id="txtName" layoutX="175.0" layoutY="313.0" prefHeight="49.0" prefWidth="294.0" promptText="User Name" style="-fx-background-radius: 30;">
+      <TextField fx:id="txtName" layoutX="180.0" layoutY="425.0" onAction="#txtNameOnAction" prefHeight="49.0" prefWidth="294.0" promptText="User Name" style="-fx-background-radius: 30;">
          <opaqueInsets>
             <Insets />
          </opaqueInsets></TextField>
-      <Label layoutX="73.0" layoutY="327.0" text="User Name :">
+      <Label layoutX="78.0" layoutY="439.0" text="User Name :">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
       </Label>
-      <JFXButton buttonType="RAISED" layoutX="213.0" layoutY="439.0" onAction="#btnLoginOnAction" prefHeight="56.0" prefWidth="115.0" style="-fx-background-radius: 35; -fx-background-color: #89CFF3;" text="Login">
+      <JFXButton buttonType="RAISED" layoutX="218.0" layoutY="552.0" onAction="#btnLoginOnAction" prefHeight="56.0" prefWidth="115.0" style="-fx-background-radius: 35; -fx-background-color: #02A4FF; -fx-border-color: black; -fx-border-radius: 35; -fx-border-width: 2;" text="Login">
          <font>
             <Font name="System Bold" size="25.0" />
          </font>
       </JFXButton>
-      <ImageView fitHeight="165.0" fitWidth="165.0" layoutX="188.0" layoutY="106.0">
+      <ImageView fitHeight="165.0" fitWidth="181.0" layoutX="185.0" layoutY="131.0">
          <image>
-            <Image url="@../img/user-96.png" />
+            <Image url="@../img/pic.png" />
          </image>
       </ImageView>
    </children>
